@@ -9,24 +9,24 @@ class BankAccount {
 		double Balance;
 	public:
 		BankAccount ()
-		{	cout << "Default Constructor Called \n" << endl;
+		{	//Default Constructor Called
 			accountHolder = "Navanath Bhosale";
 			accountNumber = 242933539335;
 			accountType = "Savings";
 			Balance=500;
 		}
 		BankAccount (string username,long long int A_number,string type,double bal)
-		{	cout << "\nParameter Constructor Called \n" << endl;
+		{	//Parameter Constructor Called
 			accountHolder = username;
 			accountNumber = A_number;
 			accountType = type;
 			Balance=bal;
 		}
-		
+		//display accountHolder name
 		void getAccountHolder(){
 		    cout << "Holder : " << accountHolder <<endl ;
 		}
-		
+		//display accountNumber
 		void getAccountNumber(){
 		    cout << "Account Number : " << accountNumber<<endl ;
 		}
@@ -63,7 +63,8 @@ class BankAccount {
 };
 int main(){
 	BankAccount  B1;
-    cout<< "Account Details:"<<endl;
+	cout<< "-----1st BankAccount Details-----" <<endl;
+    cout<< "\nAccount Details:"<<endl;
     B1.getAccountHolder();
     B1.getAccountNumber();
     B1.getAccountType();
@@ -73,8 +74,10 @@ int main(){
     B1.setAccountType("Current");
     B1.displayAccountDetails();
     
+    // 2nd BankAccount Details
     BankAccount  B2("Digvijay Devkar",749918187677,"current",1000);
-    cout<< "Account Details:"<<endl;
+    cout<< "\n-----2nd BankAccount Details-----" <<endl;
+    cout<< "\nAccount Details:"<<endl;
     B2.getAccountHolder();
     B2.getAccountNumber();
     B2.getAccountType();
@@ -83,5 +86,4 @@ int main(){
     B2.withdraw(1000);
     B2.setAccountType("Savings");
     B2.displayAccountDetails();
-    
 }
