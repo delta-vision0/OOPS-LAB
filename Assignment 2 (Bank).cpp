@@ -1,21 +1,21 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-class Bank{
+class BankAccount {
 	private:
 		string accountHolder;
 		long long int accountNumber;
 		string accountType;
 		double Balance;
 	public:
-		Bank()
+		BankAccount ()
 		{	cout << "Default Constructor Called \n" << endl;
 			accountHolder = "Navanath Bhosale";
 			accountNumber = 242933539335;
 			accountType = "Savings";
 			Balance=500;
 		}
-		Bank(string username,long long int A_number,string type,double bal)
+		BankAccount (string username,long long int A_number,string type,double bal)
 		{	cout << "\nParameter Constructor Called \n" << endl;
 			accountHolder = username;
 			accountNumber = A_number;
@@ -51,18 +51,18 @@ class Bank{
     			cout << "New Balance : " <<Balance<<"..."<< endl;
     		}
     	void displayAccountDetails(){
-    	    cout << "\nFinal Account Details: " << Balance<<endl ;
+    	    cout << "\nFinal Account Details: "<<endl ;
     	    cout << "Holder : " << accountHolder <<endl ;
     	    cout << "Account Number : " << accountNumber<<endl ;
     	    cout << "Type : " << accountType<<endl ;
     	    cout << "Balance : " << Balance<<endl ;
     	}
-		~Bank(){
-			cout << "Destructor is Called " <<endl;
+		~BankAccount (){
+			cout << "\nDestructor is Called " <<endl;
 		}
 };
 int main(){
-	Bank B1;
+	BankAccount  B1;
     cout<< "Account Details:"<<endl;
     B1.getAccountHolder();
     B1.getAccountNumber();
@@ -73,7 +73,7 @@ int main(){
     B1.setAccountType("Current");
     B1.displayAccountDetails();
     
-    Bank B2("Digvijay Devkar",749918187677,"current",1000);
+    BankAccount  B2("Digvijay Devkar",749918187677,"current",1000);
     cout<< "Account Details:"<<endl;
     B2.getAccountHolder();
     B2.getAccountNumber();
