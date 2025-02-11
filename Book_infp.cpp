@@ -32,7 +32,8 @@ class Book{
 			format_type=format;
 			chapter_pg= new float[chap_num];
 			for (int i = 0; i < chap_num; i++) {
-            chapter_pg[i] = page_count / float(chap_num);
+            chapter_pg[i] =chap_pg[i];
+            
         }
 			chapter_number=chap_num;
 		}
@@ -59,15 +60,18 @@ class Book{
 				cout<<"NO"<<endl;
 			}
 			cout<<"Chapter Pages :";
-			for(int i=0;i<chapter_number;i++)
+			for(int i=0;i<chapter_number;i++){
 				cout<<chapter_pg[i];
+			    cout<<"  ";
+			}
 			cout<<endl;
 			cout<<"number of chapters :" <<chapter_number<<endl;
 		}
 };
 int main() {
 	Book b1;
-	float arr[20]={10,11,12,13,14,15};
+	b1.getinfo();
+	float arr[20]={10,11,12,13,14,15,16,17,18,19};
 	Book b2("BOOK","Haris",121,true,arr,10);
 	b2.getinfo();
 }
