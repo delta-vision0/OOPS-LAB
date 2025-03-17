@@ -1,17 +1,18 @@
 #include <iostream>
 #include <string>
+using namespace std;
 class Bank{
 	public:
 		void deposit(int amt){
-			cout<<"Depositing "<<amt<<"in cash"<<endl;
+			cout<<"Depositing "<<amt<<" in cash"<<endl;
 		}
 		
-		void deposit(float amt){
-			cout<<"Depositing "<<amt<<"via digital payment"<<endl;
+		void deposit(double amt){
+			cout<<"Depositing "<<amt<<" via digital payment"<<endl;
 		}
 		
 		void deposit(string UPI_ID,float amt){
-			cout<<"Depositing "<<amt<<"Rs !"<<"Using UPI"<<UPI_ID<<endl;
+			cout<<"Depositing "<<amt<<" Rs !"<<" Using UPI ("<<UPI_ID<<")"<<endl;
 		}	
 };
 
@@ -33,7 +34,7 @@ class Account {
 		void operator+(Account &acc){
 			float TransferAmt;
 			cout<<"Enter the amount to transfer from Account"<<accountNumber<<"to Account"<<acc.accountNumber<<endl;
-			cin<<TransferAmt;
+			cin>>TransferAmt;
 			if(balance>=TransferAmt){
 				balance=balance-TransferAmt;
 				acc.balance=acc.balance+TransferAmt;
@@ -56,7 +57,7 @@ class Account {
 int main(){
 	Bank b1;
 	b1.deposit(5000);
-	b1.deposit(1500);
+	b1.deposit(1500.75);
 	b1.deposit("gpay@upi",2500);
 	
 	Account a1(1,10000);
